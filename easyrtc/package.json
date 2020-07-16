@@ -5,7 +5,7 @@
 "description" : "Simple EasyRTC server example which includes EasyRTC, Express, and Socket.io",
 "private" : true,
 "scripts": {
-"start" : "node server.js"
+    "start" : "node server.js"
 },
 "dependencies" : {
 "easyrtc" : "1.0.x",
