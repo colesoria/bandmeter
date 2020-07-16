@@ -1,0 +1,8 @@
+<ul id="menuweb">
+	<li><a ng-href="/jamrooms">Jamrooms</a></li>
+	<li><a ng-href="/bands">{{app.translation.menu.bands}}</a></li>
+	<!--<li><a ng-href="/friends">{{app.translation.menu.friends}}</a></li>
+	<li><a ng-href="/following">{{app.translation.menu.following}}</a></li>
+	<li><a ng-href="/studio">{{app.translation.menu.studio}}</a></li>-->
+	<li><a ng-href="/messages">{{app.translation.menu.messages}}</a><span ng-show="menuweb.messages > 0">{{menuweb.messages}}</span></li>
+</ul>

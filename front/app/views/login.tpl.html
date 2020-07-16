@@ -1,0 +1,43 @@
+<div id="map"></div>
+<div class="logo"><img width="100%"; src="/img/logo.png"></div>
+<div id="form">
+	<div id="inic">
+		<ul id="menu_log">
+			<li id="play" ng-click="login.showLogin()">{{app.translation.login.login}}</li>
+			<li id="reg" ng-click="login.showReg()">{{app.translation.login.register}}</li>
+			<li class="last" id="see" ng-click="login.showConcert()">{{app.translation.login.see_concert}}</li>
+		</ul>
+	</div>
+    <div id="signin" style="display:none;">
+       	<div class="close" ng-click="login.close('signin')"><img src="/img/close.png" width="95%" /></div>
+       	<form name="signinForm" id="loginForm">
+    		<input type="email" ng-model='signin.email' placeholder="email" required>
+    		<input type="password" ng-model='signin.password' placeholder="{{app.translation.login.password}}" required>
+    		<div ng-click="login.login(signin)" id="signinbtn" class="button">{{app.translation.common.send}}</div>
+		</form>
+    </div>
+    <div id="concert" style="display:none;">
+       	<div class="close" ng-click="login.close('concert')"><img src="/img/close.png" width="95%" /></div>
+        <input type="text" name="code" placeholder="{{app.translation.login.concert_code}}">
+        <div id="concertbtn" class="button">{{app.translation.common.send}}</div>
+    </div>
+    <div id="register" style="display:none;">
+     	<div class="close" ng-click="login.close('register')"><img src="/img/close.png" width="95%" /></div>
+        <input id='usernamereg' type="text" name="username" placeholder="{{app.translation.login.username}}" ng-model="login.reg.username">
+        <input id='fullnamereg' type="text" name="fullname" placeholder="{{app.translation.login.fullname}}" ng-model="login.reg.fullname">
+        <input id='emailreg' type="email" name="email" placeholder="Email" ng-model="login.reg.email">
+        <input id='passwordreg' type="text" name="password" placeholder="{{app.translation.login.password}}" ng-model="login.reg.password">
+        <input id='password2reg' type="text" name="password2" placeholder="{{app.translation.login.rpassword}}" ng-model="login.reg.password2">
+        <div id="regbtn" class="button" ng-click="login.register(login.reg)">{{app.translation.login.register}}</div>
+    </div>
+</div>
+<div id="menuWeb">
+    <ul class="menuWeb">
+        <li>{{app.translation.login.instructions}}</li>
+        <li>{{app.translation.login.adds}}</li>
+        <li>{{app.translation.login.shop}}</li>
+        <li class="last">{{app.translation.login.bandmeter}}</li>
+    </ul>
+</div>
+
+

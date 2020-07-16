@@ -1,0 +1,38 @@
+<!-- Cabecera de la web -->
+<header>
+	<div id="menu"><i class="fa fa-bars" aria-hidden="true" ng-click="app.showMenu()"></i></div>
+	<div class="logo-header"><a ng-href="/home"><img height="35px" src="/img/logo.png"></a></div>
+	<profileweb></profileweb>
+	<div id="logout"><i class="fa fa-sign-out" aria-hidden="true" ng-click="app.logout()"></i></div>
+	<div id="lang">
+		<i class="fa fa-globe" aria-hidden="true" ng-click="app.showLang()"></i> <span>{{app.language}}</span>
+		<ul id="langmen">
+			<li ng-click="app.changeLang('es')">Español</li>
+			<li ng-click="app.changeLang('en')">English</li>
+		</ul>
+	</div>
+	<div id="search">
+		<label><input class="searchinput" type="text" ng-model="search" placeholder="{{app.translation.common.search}}"><i class="fa fa-search" aria-hidden="true" ng-click="app.search(search)"></i></label>
+	</div>
+	<span class="migas">{{$root.titulo}}</span>
+</header>
+<menuweb></menuweb>
+<div id="home">
+	<div ng-repeat="user in home.users | orderBy: 'nickname'" class="user-list" ng-if="user._id !== home.user.id">
+		<a ng-href="/profile/{{user.slug}}">
+			<img src="http://bandmeter.com/uploads/{{user.image}}" ng-if="user.image" alt="{{user.nickname}}">
+			<img src="/uploads/defaultuser.gif" ng-if="!user.image" alt="{{user.nickname}}">
+			<div class="user-data">
+				<p class="nickname">{{user.nickname}} <span ng-if="user.instruments">| {{user.instruments}}</span></p>
+				<p class="fullname">{{user.fullname}} <span ng-if="user.country">| {{user.country}}</span></p>
+			</div>
+		</a>
+		<div class="actions">
+			<i class="fa fa-circle" ng-if="user.status == 'logged'" aria-hidden="true"></i>
+			<i class="fa fa-user-plus" ng-if="home.friends.indexOf(user._id) < 0" ng-click="home.askForFriend(user._id)" aria-hidden="true"></i>
+			<i class="fa fa-users" ng-if="home.friends.indexOf(user._id) > -1" aria-hidden="true"></i>
+			<i class="fa fa-comments-o" ng-if="home.friends.indexOf(user._id) > -1" ng-click="app.sendMessage(user.nickname,user._id)" aria-hidden="true"></i>
+		</div>
+	</div>
+</div>
+<widgetright></widgetright>

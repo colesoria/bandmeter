@@ -1,0 +1,59 @@
+<!-- Cabecera de la web -->
+<header>
+	<div id="menu"><i class="fa fa-bars" aria-hidden="true" ng-click="app.showMenu()"></i></div>
+	<div class="logo-header"><a ng-href="/home"><img height="35px" src="/img/logo.png"></a></div>
+	<profileweb></profileweb>
+	<div id="logout"><i class="fa fa-sign-out" aria-hidden="true" ng-click="app.logout()"></i></div>
+	<div id="lang">
+		<i class="fa fa-globe" aria-hidden="true" ng-click="app.showLang()"></i> <span>{{app.language}}</span>
+		<ul id="langmen">
+			<li ng-click="app.changeLang('es')">Español</li>
+			<li ng-click="app.changeLang('en')">English</li>
+		</ul>
+	</div>
+	<div id="search">
+		<label><input class="searchinput" type="text" ng-model="search" placeholder="{{app.translation.common.search}}"><i class="fa fa-search" aria-hidden="true" ng-click="app.search(search)"></i></label>
+	</div>
+</header>
+<menuweb></menuweb>
+<div id="profile">
+	<div class="dbgimg">
+		<i class="fa fa-upload bgimgc" aria-hidden="true"></i>
+		<input class="bgimgi" accept="image/*" name="bgimg" type="file" ng-file-select="editprofile.onFileSelect($files,'bgimg')" required>
+		<img class="bgimg" src="http://bandmeter.com/uploads/{{editprofile.user.backgroundImage}}" alt="{{editprofile.user.nickname}}">
+		<div id="dbimgloading" ng-show="editprofile.dbimgloading"></div>
+	</div>
+	<div class="dprofimg">
+		<i class="profimgc fa fa-upload" aria-hidden="true"></i>
+		<input class="profimgi" accept="image/*" name="profimg" type="file" ng-file-select="editprofile.onFileSelect($files,'profimg')" required>
+		<img class="profimg" src="http://bandmeter.com/uploads/{{editprofile.user.image}}" alt="{{editprofile.user.nickname}}">
+		<div id="dprogimgloading" ng-show="editprofile.dprogimgloading"></div>
+	</div>
+	<div id="datos">
+		<div class="fleft">
+			<div id="profnick">
+				<input type="text" name="nickname" id="nicknameInput" value="{{editprofile.user.nickname}}" placeholder="{{app.translation.edit.username_placeholder}}">
+			</div>
+			<div id="proffull">
+				<input type="text" name="fullname" id="fullnameInput" value="{{editprofile.user.fullname}}" placeholder="{{app.translation.edit.fullname_placeholder}}">
+			</div>
+		</div>
+		<div class="fright">
+			<div id="profcity">
+				<input type="text" name="city" id="cityInput" value="{{editprofile.user.city}}" placeholder="{{app.translation.edit.city_placeholder}}">
+			</div>
+			<div id="profcountry">
+				<input type="text" name="country" id="countryInput" value="{{editprofile.user.country}}" placeholder="{{app.translation.edit.country_placeholder}}">
+			</div>
+		</div>
+		<br clear="all">
+		<div class="bottom">
+			<div class="instruments">
+				<h3></h3>
+				<input type="text" name="instruments" id="instrumentsInput" value="{{editprofile.user.instruments}}" placeholder="{{app.translation.edit.instruments_placeholder}}">
+			</div>
+			<br clear="all">
+			<div id="saveProfile" class="button" ng-click="editprofile.update()">{{app.translation.common.save}}</div>
+		</div>
+	</div>
+</div>

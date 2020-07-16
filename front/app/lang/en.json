@@ -1,0 +1,57 @@
+{
+	"common":{
+		"slogan": "Play with your band wherever you are",
+		"send": "Send",
+		"pol_priv": "Privacy policy",
+		"pol_cook": "Cookies policy",
+		"search" : "Search",
+		"save" : "Save"
+	},
+	"login":{
+		"login":"Login",
+		"register": "Register",
+		"see_concert": "See a concert",
+		"instructions": "Instructions",
+		"adds": "Adds",
+		"shop": "Shop",
+		"bandmeter": "Bandmeter",
+		"password": "Password",
+		"concert_code": "Concert code",
+		"username" : "Username",
+		"fullname" : "Full name",
+		"rpassword" : "Repeat your password"
+	},
+	"menu": {
+		"bands" : "The bands",
+		"friends" : "Friends",
+		"following" : "Following",
+		"studio" : "Record studio",
+		"messages" : "Messages",
+		"notifications" : "Notifications" 
+	},
+	"message":{
+		"accept": "Accept friendship",
+		"senton": "sent on",
+		"sendMessage": "Send a message",
+		"inputTextMessage" : "Write the message you want to send to "
+	},
+	"header":{
+		"home" : "Home",
+		"messages" : "Messages"
+	},
+	"edit" : {
+		"username_placeholder" : "User name",
+		"fullname_placeholder" : "Full name",
+		"city_placeholder" : "City",
+		"country_placeholder" : "Country",
+		"instruments" : "Instruments",
+		"instruments_placeholder" : "Write the instruments you play here",
+		"members" : "Members of the band",
+		"style_placeholder" : "Music style",
+		"name_placeholder" : "Name of the band"
+	},
+	"widgets" : {
+		"friends": "Friends",
+		"usersOnline" : "Users online now"
+	}
+}

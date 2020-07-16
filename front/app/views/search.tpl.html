@@ -1,0 +1,29 @@
+<div id="searchTpl">
+	<div id="search">
+		<label><input class="searchinput" type="text" ng-model="search.busqueda" placeholder="users, jamrooms, bands"><img src="/img/lupa.png" ng-click="app.search(search.busqueda)" alt="search"></label>
+	</div>
+	<ul id="menu-busqueda">
+		<li id="users">Usuarios</li>
+		<li id="jamrooms">Jamrooms</li>
+		<li id="bands">Bandas</li>
+	</ul>
+	<div class="searchUser" ng-repeat="fullname in search.fullnames | filter: search.busqueda track by fullname._id">
+		<img ng-src="/uploads/{{fullname.image}}" >
+		<div class="user-data">
+			<h2><a ng-href="/profile/{{fullname.slug}}">{{fullname.nickname}}</a></h2>
+  			<p class="city-instruments">{{fullname.instruments}}</p>
+		</div>
+		<div class="user-status">
+			<p ng-show="fullname.status == 'logged'"><img class="greendot" src="/img/GreenDot.png" alt="Online"></p>
+			<p ng-show="fullname.status == 'offline' || !fullname.status"><img class="reddot" src="/img/red-dot2.png" alt="Offline"></p>
+		</div>
+		<div class="button send-m" ng-click="app.sendMessage(fullname.nickname,fullname._id)">Enviar mensaje</div>
+	</div>
+	<!--<div ng-repeat="band in search.bands track by band.id">
+		<img ng-src="uploads/"+band.image >
+  		<h2><a ng-href="/profile/{{band.slug}}">{{band.name}}</a></h2>
+	</div>
+	<div ng-repeat="room in search.rooms track by room.id">
+  		<h2><a ng-href="/room/{{room.slug}}">{{room.name}}</a></h2>
+	</div>-->
+</div>

@@ -1,0 +1,8 @@
+<div id="perfil" ng-show="app.logado">
+	<img src="http://bandmeter.com/uploads/{{profileweb.user.image}}" alt="{{profileweb.user.nickname}}" width="100%">
+	<!--<a ng-click="app.logout()">Salir</a><a>|</a><a ng-href="/edit_profile/{{profileweb.user.slug}}">Editar perfil</a>-->
+	<div id="perfil-data">
+		<a ng-href="/edit_profile/{{profileweb.user.slug}}">{{profileweb.user.nickname}}</a>
+		<p>{{profileweb.user.city}} | {{profileweb.user.country}}</p>
+	</div>
+</div>

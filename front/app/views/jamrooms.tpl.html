@@ -1,0 +1,40 @@
+<!-- Cabecera de la web -->
+<header>
+	<div id="menu"><i class="fa fa-bars" aria-hidden="true" ng-click="app.showMenu()"></i></div>
+	<div class="logo-header"><a ng-href="/home"><img height="35px" src="/img/logo.png"></a></div>
+	<profileweb></profileweb>
+	<div id="logout"><i class="fa fa-sign-out" aria-hidden="true" ng-click="app.logout()"></i></div>
+	<div id="lang">
+		<i class="fa fa-globe" aria-hidden="true" ng-click="app.showLang()"></i> <span>{{app.language}}</span>
+		<ul id="langmen">
+			<li ng-click="app.changeLang('es')">Español</li>
+			<li ng-click="app.changeLang('en')">English</li>
+		</ul>
+	</div>
+	<div id="search">
+		<label><input class="searchinput" type="text" ng-model="search" placeholder="{{app.translation.common.search}}"><i class="fa fa-search" aria-hidden="true" ng-click="app.search(search)"></i></label>
+	</div>
+	<span class="migas">{{$root.titulo}}</span>
+</header>
+<menuweb></menuweb>
+<div id="jamrooms">
+	<div id="menujamrooms">
+		<ul>
+			<li>Create new Jamroom <i ng-click="jamrooms.createJamroom()" class="fa fa-plus-square" aria-hidden="true"></i></li>
+		</ul>
+	</div>
+	<div id="jamroomslist">
+	<div ng-repeat="jamroom in jamrooms.jamrooms | orderBy: 'name'" class="jamroom-list">
+		<div class="user-data">
+			<p class="jamroomname">{{jamroom.name}}</p><p class="fullname"> - created by: {{jamroom.userOwner.nickname}}</p>
+			<p class="members" ng-repeat="user in jamroom.userMember | orderBy: 'nickname'">{{user.nickname}}</p>
+			<input ng-if="!jamrooms.ismember" type="text" id="roomcode" name="roomcode">{{jamroom.ismember}}
+		</div>
+		<div class="actions">
+			<i ng-if="jamrooms.ismember" ng-click="jamrooms.accessJamroom(jamroom.slug)" class="fa fa-sign-in" aria-hidden="true"></i>
+			<i ng-if="!jamrooms.ismember" ng-click="jamrooms.joinJamroom()" class="fa fa-sign-in" aria-hidden="true"></i>
+		</div>
+	</div>
+</div>
+</div>
+<widgetright></widgetright>

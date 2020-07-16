@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es-ES" ng-app="bandmeter" ng-controller="ApplicationController as app">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>BandMeter - {{app.translation.common.slogan}} -</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <!-- Coloca favicon.ico y apple-touch-icon(s) en el directorio raíz -->
+        <!-- bower:css -->
+        <!--<link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />-->
+        <!-- endbower -->
+        <!-- inject:css -->
+        <link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
+        <link rel="stylesheet" href="/stylesheets/hinf-font.css">
+        <link rel="stylesheet" href="/stylesheets/main.css">
+        <link rel="stylesheet" href="/stylesheets/specimen_files/grid_12-825-55-15.css">
+        <link rel="stylesheet" href="/stylesheets/specimen_files/specimen_stylesheet.css">
+        <!-- endinject -->
+        <link rel="stylesheet" href="/lib/sweetalert/dist/sweetalert.css">
+        <link rel="stylesheet" href="/lib/flag-icon-css/css/flag-icon.css">
+            <script src="//connect.facebook.net/en_US/sdk.js"></script>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '734905063269553',
+      xfbml      : true,
+      version    : 'v2.10'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+    </head>
+    <body ng-cloak="">
+    <!--[if lt IE 8]>
+        <p class="browsehappy">
+        Estás usando un navegador <strong>desactualizado</strong>.
+        Por favor <a href="http://browsehappy.com/">actualiza tu navegador</a>
+        Para mejorar la experiencia..
+        </p>
+    <![endif]-->
+    <div class="container-fluid">
+        <div class="row">
+            <section ng-view id="wrap" class=""></section>
+        </div>
+    </div>
+    <footer>
+        <bandfooter></bandfooter>
+    </footer>
+    <!-- Google Analytics: Cambia UA-XXXXX-X por el ID de tu sitio -->
+    <script>
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-50623712-1','auto');ga('send','pageview');
+    </script>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyB-pc9ceZ_Wz4nnj5ZROxFJ2_s1ba078MQ&sensor=true&libraries=places"></script>
+    <!-- bower:js -->
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/lib/angular/angular.js"></script>
+    <script src="/lib/angular-animate/angular-animate.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/lib/angular-route/angular-route.js"></script>
+    <script src="/lib/angular-resource/angular-resource.js"></script>
+    <script src="/lib/angular-cookies/angular-cookies.js"></script>
+    <script src="/lib/socket.io/socket.io.js"></script>
+    <script src="/lib/easyrtc/easyrtc.js"></script>
+    <script src="/lib/ng-file-upload/angular-file-upload.js"></script>
+    <script src="/lib/ng-file-upload-shim/angular-file-upload-shim.js"></script>
+    <script src="/lib/jquery.cookiesdirective.js"></script>
+    <script src="/lib/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="/lib/ngSweetAlert/SweetAlert.min.js"></script>
+    <script src="/lib/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
+    <script src="/lib/socket.io/dist/socket.io.js"></script>
+    <script src="/lib/markerwithlabel.js"></script>
+    <script src="/lib/audiorecorder/dist/angular-audio-recorder.min.js"></script>
+    <script src="/lib/wavesurfer.js/dist/wavesurfer.min.js"></script>
+    <script src="/lib/ng-country-select/dist/ng-country-select.js"></script>
+    <!-- endbower -->
+    <!-- inject:js -->
+    <script src="/scripts/app.js"></script>
+    <script src="/scripts/controller/activate.js"></script>
+    <script src="/scripts/controller/application.js"></script>
+    <script src="/scripts/controller/bands.js"></script>
+    <script src="/scripts/controller/bandsnew.js"></script>
+    <script src="/scripts/controller/editprofile.js"></script>
+    <script src="/scripts/controller/footer.js"></script>
+    <script src="/scripts/controller/friends.js"></script>
+    <script src="/scripts/controller/friendswidget.js"></script>
+    <script src="/scripts/controller/home.js"></script>
+    <script src="/scripts/controller/jamrooms.js"></script>
+    <script src="/scripts/controller/jcrop.js"></script>
+    <script src="/scripts/controller/login.js"></script>
+    <script src="/scripts/controller/menu.js"></script>
+    <script src="/scripts/controller/messages.js"></script>
+    <script src="/scripts/controller/notifications.js"></script>
+    <script src="/scripts/controller/profile.js"></script>
+    <script src="/scripts/controller/profileweb.js"></script>
+    <script src="/scripts/controller/room.js"></script>
+    <script src="/scripts/controller/search.js"></script>
+    <script src="/scripts/controller/studio.js"></script>
+    <script src="/scripts/controller/usersonline.js"></script>
+    <script src="/scripts/directive/directives.js"></script>
+    <script src="/scripts/service/services.js"></script>
+    <!-- endinject -->
+  </body>
+</html>

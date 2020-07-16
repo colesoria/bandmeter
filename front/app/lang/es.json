@@ -1,0 +1,57 @@
+{
+	"common":{
+		"slogan": "Toca con tu banda desde cualquier lugar",
+		"send": "Enviar",
+		"pol_priv": "Política de privacidad",
+		"pol_cook": "Política de cookies",
+		"search" : "Búsqueda",
+		"save" : "Guardar"
+	},
+	"login":{
+		"login":"Entrar",
+		"register": "Registrarse",
+		"see_concert": "Ver un concierto",
+		"instructions": "Instrucciones",
+		"adds": "Anuncios",
+		"shop": "Tienda",
+		"bandmeter": "Bandometro",
+		"password": "Contraseña",
+		"concert_code": "Código del concierto",
+		"username" : "Nombre de usuario",
+		"fullname" : "Nombre completo",
+		"rpassword" : "Repite tu contraseña"
+	},
+	"menu": {
+		"bands" : "Las bandas",
+		"friends" : "Amigos",
+		"following" : "Sigues",
+		"studio" : "Estudio de grabación",
+		"messages" : "Mensajes",
+		"notifications" : "Notificaciones" 
+	},
+	"message":{
+		"accpet": "Aceptar amistad",
+		"senton": "enviado el",
+		"sendMessage": "Enviar un mensaje",
+		"inputTextMessage" : "Escribe el mensaje que le quieres mandar a "
+	},
+	"header":{
+		"home" : "Home",
+		"messages" : "Mensajes"
+	},
+	"edit" : {
+		"username_placeholder" : "Nombre de usuario",
+		"fullname_placeholder" : "Nombre completo",
+		"city_placeholder" : "Ciudad",
+		"country_placeholder" : "País",
+		"instruments" : "Intrumentos",
+		"instruments_placeholder" : "Escribe aquí los instrumentos que tocas",
+		"members" : "Miembros de la banda",
+		"style_placeholder" : "Estilo musical",
+		"name_placeholder" : "Nombre de la banda"
+	},
+	"widgets" : {
+		"friends": "Amigos",
+		"usersOnline" : "Usuarios conectados"
+	}
+}

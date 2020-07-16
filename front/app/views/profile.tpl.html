@@ -1,0 +1,58 @@
+<!-- Cabecera de la web -->
+<header>
+	<div id="menu"><i class="fa fa-bars" aria-hidden="true" ng-click="app.showMenu()"></i></div>
+	<div class="logo-header"><a ng-href="/home"><img height="35px" src="/img/logo.png"></a></div>
+	<profileweb></profileweb>
+	<div id="logout"><i class="fa fa-sign-out" aria-hidden="true" ng-click="app.logout()"></i></div>
+	<div id="lang">
+		<i class="fa fa-globe" aria-hidden="true" ng-click="app.showLang()"></i> <span>{{app.language}}</span>
+		<ul id="langmen">
+			<li ng-click="app.changeLang('es')">Español</li>
+			<li ng-click="app.changeLang('en')">English</li>
+		</ul>
+	</div>
+	<div id="search">
+		<label><input class="searchinput" type="text" ng-model="search" placeholder="{{app.translation.common.search}}"><i class="fa fa-search" aria-hidden="true" ng-click="app.search(search)"></i></label>
+	</div>
+</header>
+<menuweb></menuweb>
+<div id="profile">
+	<div class="dbgimg">
+		<img class="bgimg" src="http://bandmeter.com/uploads/{{profile.user.backgroundImage}}" alt="{{profile.user.nickname}}">
+	</div>
+	<div class="dprofimg">
+		<img class="profimg" src="http://bandmeter.com/uploads/{{profile.user.image}}" alt="{{profile.user.nickname}}">
+	</div>
+	<div id="datos">
+		<div class="fleft">
+			<div id="profnick">
+				<h1 ng-show="!profile.nickname">{{profile.user.nickname}}</h1>
+				<div class="clear"></div>
+			</div>
+			<div id="proffull">
+				<h2 ng-show="!profile.fullname">{{profile.user.fullname}}</h2>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="fright">
+			<div id="profnick">
+				<h1 ng-show="!profile.city">{{profile.user.city}}</h1>
+				<div class="clear"></div>
+			</div>
+			<div id="proffull">
+				<h2 ng-show="!profile.country">{{profile.user.country}}</h2>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="bands">
+				<h3>Bands</h3>
+				<p ng-repeat="band in bands"><img src="{{band.logo}}" alt="band.name"><a ng-href="/band/{{band.slug}}">{{band.name}}</a></p>
+			</div>
+			<div class="instruments-prof">
+				<h3>Instruments</h3>
+				<p>{{profile.user.instruments}}</p>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,17 @@
+<div id="friendswidget">
+	<div class="widgetitle">{{translation.widgets.friends}}</div>
+	<div ng-repeat="user in friendswidget.friends track by user._id | orderBy: 'nickname'" class="user-list">
+		<a ng-href="/profile/{{user.slug}}">
+			<img src="http://bandmeter.com/uploads/{{user.image}}" ng-if="user.image" alt="{{user.nickname}}">
+			<img src="/uploads/defaultuser.gif" ng-if="!user.image" alt="{{user.nickname}}">
+			<div class="user-data">
+				<p class="nickname">{{user.nickname}} <span ng-if="user.instruments">| {{user.instruments}}</span></p>
+				<p class="fullname">{{user.fullname}} <span ng-if="user.country">| {{user.country}}</span></p>
+			</div>
+		</a>
+		<div class="actions">
+			<i class="fa fa-circle" ng-if="user.status == 'logged'" aria-hidden="true"></i>
+			<i class="fa fa-comments-o" ng-if="usersonline.friends.indexOf(user._id) > -1" ng-click="app.sendMessage(user.nickname,user._id)" aria-hidden="true"></i>
+		</div>
+	</div>
+</div>
